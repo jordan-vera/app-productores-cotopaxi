@@ -1,0 +1,185 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-searchbar showCancelButton="never" placeholder="Buscar productos" name="busquedatxt" [(ngModel)]="buscartxt"
+    (keyup.enter)="buscar()">
+    </ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngIf="productoresLamana">
+    <ion-list-header style="background-color: rgb(234, 234, 250);">
+      Productores de La Maná
+    </ion-list-header>
+    <div class="container-fluid testimonial-group2 mt-1">
+      <div class="row">
+        <div class="col-6 ps-1 pe-1" *ngFor="let x of productoresLamana">
+          <div class="border rounded p-1 card-zona" style="cursor: pointer;"
+            [routerLink]="['/index/productor', x.idproductor]">
+            <div class="text-center box">
+              <img src="{{urlPortada+x.portada}}" class="image-zona">
+            </div>
+            <div class="ps-2 pe-2 pt-2">
+              <p class="nombre-zona"><b>{{x.nombre}}</b></p>
+
+              <p class="descripcion-zona text-justify">{{x.descripcion}}</p>
+            </div>
+
+            <div class="canton">{{x.nombrecanton}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="productoresLatacunga" class="mt-1 mb-1">
+    <ion-list-header style="background-color: rgb(234, 234, 250);">
+      Productores de Latacunga
+    </ion-list-header>
+    <div class="container-fluid testimonial-group2 mt-1">
+        <div class="row">
+            <div class="col-6 ps-1 pe-1" *ngFor="let x of productoresLatacunga">
+                <div class="border rounded p-1 card-zona cardd" style="cursor: pointer;"
+                    [routerLink]="['/index/productor', x.idproductor]">
+                    <div class="text-center box">
+                        <img src="{{urlPortada+x.portada}}" class="image-zona">
+                    </div>
+                    <div class="ps-2 pe-2 pt-2">
+                        <p class="nombre-zona"><b>{{x.nombre}}</b></p>
+
+                        <p class="descripcion-zona text-justify">{{x.descripcion}}</p>
+                    </div>
+
+                    <div class="canton">{{x.nombrecanton}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="productorespangua" class="mt-1 mb-1">
+  <ion-list-header style="background-color: rgb(234, 234, 250);">
+    Productores de Pangua
+  </ion-list-header>
+  <div class="container-fluid testimonial-group2 mt-1">
+      <div class="row">
+          <div class="col-6 ps-1 pe-1" *ngFor="let x of productorespangua">
+              <div class="border rounded p-1 card-zona cardd" style="cursor: pointer;"
+                  [routerLink]="['/index/productor', x.idproductor]">
+                  <div class="text-center box">
+                      <img src="{{urlPortada+x.portada}}" class="image-zona">
+                  </div>
+                  <div class="ps-2 pe-2 pt-2">
+                      <p class="nombre-zona"><b>{{x.nombre}}</b></p>
+
+                      <p class="descripcion-zona text-justify">{{x.descripcion}}</p>
+                  </div>
+
+                  <div class="canton">{{x.nombrecanton}}</div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div *ngIf="productorespijili" class="mt-1 mb-1">
+  <ion-list-header style="background-color: rgb(234, 234, 250);">
+    Productores de Pujilí
+  </ion-list-header>
+  <div class="container-fluid testimonial-group2 mt-1">
+      <div class="row">
+          <div class="col-6 ps-1 pe-1" *ngFor="let x of productorespijili">
+              <div class="border rounded p-1 card-zona cardd" style="cursor: pointer;"
+                  [routerLink]="['/index/productor', x.idproductor]">
+                  <div class="text-center box">
+                      <img src="{{urlPortada+x.portada}}" class="image-zona">
+                  </div>
+                  <div class="ps-2 pe-2 pt-2">
+                      <p class="nombre-zona"><b>{{x.nombre}}</b></p>
+
+                      <p class="descripcion-zona text-justify">{{x.descripcion}}</p>
+                  </div>
+
+                  <div class="canton">{{x.nombrecanton}}</div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div *ngIf="productoressalcedo" class="mt-1 mb-1">
+  <ion-list-header style="background-color: rgb(234, 234, 250);">
+    Productores de Salcedo
+  </ion-list-header>
+  <div class="container-fluid testimonial-group2 mt-1">
+      <div class="row">
+          <div class="col-6 ps-1 pe-1" *ngFor="let x of productoressalcedo">
+              <div class="border rounded p-1 card-zona cardd" style="cursor: pointer;"
+                  [routerLink]="['/index/productor', x.idproductor]">
+                  <div class="text-center box">
+                      <img src="{{urlPortada+x.portada}}" class="image-zona">
+                  </div>
+                  <div class="ps-2 pe-2 pt-2">
+                      <p class="nombre-zona"><b>{{x.nombre}}</b></p>
+
+                      <p class="descripcion-zona text-justify">{{x.descripcion}}</p>
+                  </div>
+
+                  <div class="canton">{{x.nombrecanton}}</div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div *ngIf="productoressaquisili" class="mt-1 mb-1">
+  <ion-list-header style="background-color: rgb(234, 234, 250);">
+    Productores de Saquisilí
+  </ion-list-header>
+  <div class="container-fluid testimonial-group2 mt-1">
+      <div class="row">
+          <div class="col-6 ps-1 pe-1" *ngFor="let x of productoressaquisili">
+              <div class="border rounded p-1 card-zona cardd" style="cursor: pointer;"
+                  [routerLink]="['/index/productor', x.idproductor]">
+                  <div class="text-center box">
+                      <img src="{{urlPortada+x.portada}}" class="image-zona">
+                  </div>
+                  <div class="ps-2 pe-2 pt-2">
+                      <p class="nombre-zona"><b>{{x.nombre}}</b></p>
+
+                      <p class="descripcion-zona text-justify">{{x.descripcion}}</p>
+                  </div>
+
+                  <div class="canton">{{x.nombrecanton}}</div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div *ngIf="productoressigchos" class="mt-1 mb-1">
+  <ion-list-header style="background-color: rgb(234, 234, 250);">
+    Productores de Sigchos
+  </ion-list-header>
+  <div class="container-fluid testimonial-group2 mt-1">
+      <div class="row">
+          <div class="col-6 ps-1 pe-1" *ngFor="let x of productoressigchos">
+              <div class="border rounded p-1 card-zona cardd" style="cursor: pointer;"
+                  [routerLink]="['/index/productor', x.idproductor]">
+                  <div class="text-center box">
+                      <img src="{{urlPortada+x.portada}}" class="image-zona">
+                  </div>
+                  <div class="ps-2 pe-2 pt-2">
+                      <p class="nombre-zona"><b>{{x.nombre}}</b></p>
+
+                      <p class="descripcion-zona text-justify">{{x.descripcion}}</p>
+                  </div>
+
+                  <div class="canton">{{x.nombrecanton}}</div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+</ion-content>
