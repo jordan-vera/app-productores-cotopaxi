@@ -1,9 +1,55 @@
-<ion-header>
+<ion-header translucent>
   <ion-toolbar>
-    <ion-title>productor-show</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab1"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
+<ion-content class="ion-padding">
+  <div *ngIf="productor">
+    <img src="{{urlImage}}" class="w-100">
+    <h4><b>{{nombre}}</b></h4>
 
-<ion-content>
+    <p class="mt-2" style="font-size: 14px;">{{descripcion}}</p>
+    <p style="font-size: 14px;"><b>Dirección:</b> {{canton}} - {{direccion}}</p>
+    <p class="mb-1" style="font-size: 14px;"><b>Email:</b> {{email}}</p>
+
+    <p class="mb-1" style="font-size: 14px;"><b>Actividad:</b> {{actividad}}</p>
+    <p class="mb-1" style="font-size: 14px;"><b>Tel:</b> {{telefono}}</p>
+    <p class="mb-1" style="font-size: 14px;"><b>Celular:</b> {{celular}}</p>
+
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4" *ngFor="let x of galeria">
+          <div class="rounded p-1 card-zona">
+            <div class="text-center box">
+              <img src="{{urlGaleria+x.imagen}}" class="image-zona">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="text-end mb-2">
+      <button class="btn btn-primary">
+        <i class="fas fa-map-marked-alt"></i> Navegar
+      </button>
+    </div>
+    <div class="table-responsive">
+      <google-map height="310px" width="340px" [center]="center1" [zoom]="zoom1">
+        <map-marker #marker *ngFor="let markerPosition of markerPositions1" [position]="markerPosition">
+        </map-marker>
+        <map-info-window>Mi ubicación</map-info-window>
+      </google-map>
+    </div>
+
+  </div>
 
 </ion-content>
+
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="square-loader" [fullScreen]="true">
+  <p style="color: white"> Loading... </p>
+</ngx-spinner>

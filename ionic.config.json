@@ -1,5 +1,7 @@
 {
   "name": "app-productores-cotopaxi",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

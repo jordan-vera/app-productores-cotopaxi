@@ -1,0 +1,70 @@
+ion-item {
+    --border-color: rgb(141, 141, 141) !important;
+    --highlight-height: 0;
+    --background: #e9e9e9;
+    border-radius: 4px;
+
+    ion-label {
+        color: rgb(8, 8, 8) !important;
+        font-weight: 300;
+        font-size: 1rem !important;
+    }
+    ion-input {
+        --color: rgb(131, 131, 131);
+    }
+    margin-bottom: 10px;
+}
+
+.box {
+    width: 100%;
+    height: 135px;
+    background: #ccc;
+    overflow: hidden;
+}
+
+.box img {
+    width: 100%;
+    height: auto;
+}
+@supports (object-fit: cover) {
+    .box img {
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+}
+
+.nombre-zona {
+    font-size: 14px;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 8px;
+    margin-top: 7px;
+    line-height: 17px;
+}
+
+.descripcion-zona {
+    font-size: 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0px;
+}
+
+.canton {
+    position: absolute;
+    bottom: 7px;
+    right: 9px;
+    font-size: 12px;
+}
+
+.card-zona {
+    height: 300px;
+    position: relative;
+}

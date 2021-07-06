@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { Productor } from '../modelo/Productor';
 import { global } from '../servicios/Global';
 import { ProductoresService } from '../servicios/productores.service';
@@ -32,6 +33,7 @@ export class Tab1Page implements OnInit {
   constructor(
     private _productoresService: ProductoresService,
     private _router: Router,
+    private spinner: NgxSpinnerService
   ) { }
 
   ngOnInit(): void {
@@ -45,14 +47,17 @@ export class Tab1Page implements OnInit {
   }
 
   getLaMana(): void {
+    this.spinner.show();
     this._productoresService.getporCanton(7).subscribe(
       response => {
+        this.spinner.hide();
         this.productoresLamana = response.response;
         if (response.response) {
           this.cantLaMana = this.productoresLamana.length;
         }
         this.getLatacunga();
       }, error => {
+        this.spinner.hide();
         console.log(error);
       }
     )

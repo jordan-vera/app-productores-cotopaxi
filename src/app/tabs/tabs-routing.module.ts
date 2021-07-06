@@ -32,7 +32,7 @@ const routes: Routes = [
         loadChildren: () => import('./../buscar-por-categoria/buscar-por-categoria.module').then( m => m.BuscarPorCategoriaPageModule)
       },
       {
-        path: 'productor-show',
+        path: 'productor-show/:idproductor',
         loadChildren: () => import('./../productor-show/productor-show.module').then( m => m.ProductorShowPageModule)
       },
       {

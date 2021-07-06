@@ -1,12 +1,21 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-searchbar showCancelButton="never" placeholder="Buscar productos" name="busquedatxt" [(ngModel)]="buscartxt"
+    <ion-searchbar showCancelButton="never" placeholder="Buscar productores" name="busquedatxt" [(ngModel)]="buscartxt"
     (keyup.enter)="buscar()">
     </ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <div class="container ps-1 pe-1">
+    <img src="../../assets/imagenes/banner.jpg" class="w-100 mt-2" style="height: 100px;">
+  </div>
+  <div class="container">
+    <h4><b>Productores de Cotopaxi </b></h4>
+    <p class="text-p">
+      Catálogo de productores agrícolas, pecuarias, manufacturas y turísticas de la provincia de Cotopaxi.
+    </p>
+  </div>
   <div *ngIf="productoresLamana">
     <ion-list-header style="background-color: rgb(234, 234, 250);">
       Productores de La Maná
@@ -15,7 +24,7 @@
       <div class="row">
         <div class="col-6 ps-1 pe-1" *ngFor="let x of productoresLamana">
           <div class="border rounded p-1 card-zona" style="cursor: pointer;"
-            [routerLink]="['/index/productor', x.idproductor]">
+            [routerLink]="['/tabs/productor-show', x.idproductor]">
             <div class="text-center box">
               <img src="{{urlPortada+x.portada}}" class="image-zona">
             </div>
@@ -40,7 +49,7 @@
         <div class="row">
             <div class="col-6 ps-1 pe-1" *ngFor="let x of productoresLatacunga">
                 <div class="border rounded p-1 card-zona cardd" style="cursor: pointer;"
-                    [routerLink]="['/index/productor', x.idproductor]">
+                    [routerLink]="['/tabs/productor-show', x.idproductor]">
                     <div class="text-center box">
                         <img src="{{urlPortada+x.portada}}" class="image-zona">
                     </div>
@@ -65,7 +74,7 @@
       <div class="row">
           <div class="col-6 ps-1 pe-1" *ngFor="let x of productorespangua">
               <div class="border rounded p-1 card-zona cardd" style="cursor: pointer;"
-                  [routerLink]="['/index/productor', x.idproductor]">
+                  [routerLink]="['/tabs/productor-show', x.idproductor]">
                   <div class="text-center box">
                       <img src="{{urlPortada+x.portada}}" class="image-zona">
                   </div>
@@ -90,7 +99,7 @@
       <div class="row">
           <div class="col-6 ps-1 pe-1" *ngFor="let x of productorespijili">
               <div class="border rounded p-1 card-zona cardd" style="cursor: pointer;"
-                  [routerLink]="['/index/productor', x.idproductor]">
+                  [routerLink]="['/tabs/productor-show', x.idproductor]">
                   <div class="text-center box">
                       <img src="{{urlPortada+x.portada}}" class="image-zona">
                   </div>
@@ -115,7 +124,7 @@
       <div class="row">
           <div class="col-6 ps-1 pe-1" *ngFor="let x of productoressalcedo">
               <div class="border rounded p-1 card-zona cardd" style="cursor: pointer;"
-                  [routerLink]="['/index/productor', x.idproductor]">
+                  [routerLink]="['/tabs/productor-show', x.idproductor]">
                   <div class="text-center box">
                       <img src="{{urlPortada+x.portada}}" class="image-zona">
                   </div>
@@ -140,7 +149,7 @@
       <div class="row">
           <div class="col-6 ps-1 pe-1" *ngFor="let x of productoressaquisili">
               <div class="border rounded p-1 card-zona cardd" style="cursor: pointer;"
-                  [routerLink]="['/index/productor', x.idproductor]">
+                  [routerLink]="['/tabs/productor-show', x.idproductor]">
                   <div class="text-center box">
                       <img src="{{urlPortada+x.portada}}" class="image-zona">
                   </div>
@@ -165,7 +174,7 @@
       <div class="row">
           <div class="col-6 ps-1 pe-1" *ngFor="let x of productoressigchos">
               <div class="border rounded p-1 card-zona cardd" style="cursor: pointer;"
-                  [routerLink]="['/index/productor', x.idproductor]">
+                  [routerLink]="['/tabs/productor-show', x.idproductor]">
                   <div class="text-center box">
                       <img src="{{urlPortada+x.portada}}" class="image-zona">
                   </div>
@@ -183,3 +192,5 @@
 </div>
 
 </ion-content>
+
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="square-loader" [fullScreen]="true"><p style="color: white" > Loading... </p></ngx-spinner>

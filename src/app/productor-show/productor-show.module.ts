@@ -7,13 +7,17 @@ import { IonicModule } from '@ionic/angular';
 import { ProductorShowPageRoutingModule } from './productor-show-routing.module';
 
 import { ProductorShowPage } from './productor-show.page';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ProductorShowPageRoutingModule
+    ProductorShowPageRoutingModule,
+    GoogleMapsModule,
+    NgxSpinnerModule
   ],
   declarations: [ProductorShowPage]
 })

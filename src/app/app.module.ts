@@ -7,6 +7,7 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 import { ActividadesService } from './servicios/actividades.service';
 import { AdministradorService } from './servicios/administrador.service';
@@ -14,11 +15,13 @@ import { CantonService } from './servicios/canton.service';
 import { ContactoService } from './servicios/contacto.service';
 import { GaleriaService } from './servicios/galeria.service';
 import { ProductoresService } from './servicios/productores.service';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule,NgxSpinnerModule, BrowserAnimationsModule, GoogleMapsModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     ActividadesService,
     AdministradorService,
@@ -26,6 +29,7 @@ import { ProductoresService } from './servicios/productores.service';
     ContactoService,
     GaleriaService,
     ProductoresService,
+    
   ],
   bootstrap: [AppComponent],
 })
