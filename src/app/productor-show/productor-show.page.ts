@@ -5,6 +5,9 @@ import { Galeria } from '../modelo/Galeria';
 import { GaleriaService } from '../servicios/galeria.service';
 import { global } from '../servicios/Global';
 import { ProductoresService } from '../servicios/productores.service';
+import { GeolocationService } from '@ng-web-apis/geolocation';
+import { take } from 'rxjs/operators';
+import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator/ngx';
 
 @Component({
   selector: 'app-productor-show',
@@ -40,7 +43,9 @@ export class ProductorShowPage implements OnInit {
     private _route: ActivatedRoute,
     private _productoresService: ProductoresService,
     private _galeriaService: GaleriaService,
-    private spinner: NgxSpinnerService
+    private spinner: NgxSpinnerService,
+    private readonly _geolocation$: GeolocationService,
+    private launchNavigator: LaunchNavigator,
   ) {
     this._route.params.subscribe((params: Params) => {
       this.idproductor = params.idproductor;
@@ -54,6 +59,24 @@ export class ProductorShowPage implements OnInit {
 
   ngAfterViewInit() {
     this.getProductor();
+  }
+
+  IrAhMapaNavegacion() {
+    this.spinner.show();
+    this._geolocation$.pipe(take(1)).subscribe(
+      position => {
+        this.spinner.hide();
+        let options: LaunchNavigatorOptions = {
+          app: this.launchNavigator.APP.GOOGLE_MAPS,
+          start: [position.coords.latitude, position.coords.longitude],
+        };
+        this.launchNavigator.navigate(this.latitud + ',' + this.longitud, options).then(
+          success => {
+          }, error => {
+          }
+        )
+      }
+    );
   }
 
   compartirFacebook(): void {

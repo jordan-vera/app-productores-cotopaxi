@@ -18,6 +18,7 @@ import { ProductoresService } from './servicios/productores.service';
 import { VisitasService } from './servicios/visitas.service';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LaunchNavigator } from '@ionic-native/launch-navigator/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,7 +31,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ContactoService,
     GaleriaService,
     ProductoresService,
-    VisitasService
+    VisitasService,
+    LaunchNavigator
   ],
   bootstrap: [AppComponent],
 })

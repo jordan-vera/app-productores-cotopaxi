@@ -12,7 +12,7 @@ export class AppComponent {
   public visita: Visita;
 
   constructor(
-    private _visitaService: VisitasService
+    private _visitaService: VisitasService,
   ) {
     this.addVisita();
   }
