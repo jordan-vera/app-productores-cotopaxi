@@ -15,6 +15,7 @@ import { CantonService } from './servicios/canton.service';
 import { ContactoService } from './servicios/contacto.service';
 import { GaleriaService } from './servicios/galeria.service';
 import { ProductoresService } from './servicios/productores.service';
+import { VisitasService } from './servicios/visitas.service';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -29,7 +30,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ContactoService,
     GaleriaService,
     ProductoresService,
-    
+    VisitasService
   ],
   bootstrap: [AppComponent],
 })

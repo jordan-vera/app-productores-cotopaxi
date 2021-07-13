@@ -34,6 +34,7 @@ export class ProductorShowPage implements OnInit {
   public urlGaleria: string = global.urlImage;
   public longitud: string = '';
   public latitud: string = '';
+  public url: string = '';
 
   constructor(
     private _route: ActivatedRoute,
@@ -48,10 +49,20 @@ export class ProductorShowPage implements OnInit {
   }
 
   ngOnInit() {
+    this.url = 'https%3A//productorescotopaxi.com/index/productor/' + this.idproductor;
   }
 
   ngAfterViewInit() {
     this.getProductor();
+  }
+
+  compartirFacebook(): void {
+    window.open('https://www.facebook.com/sharer/sharer.php?u=' + this.url, '_blank');
+  }
+
+  compartirWhatsApp(): void {
+    window.open('https://api.whatsapp.com/send?text=*' + encodeURIComponent(this.nombre) + '*%20%0A*Cantón:*%20' + this.canton + '%20%0A' +
+      this.url, '_blank');
   }
 
   getGaleria(): void {
