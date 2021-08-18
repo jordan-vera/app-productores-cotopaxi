@@ -2,6 +2,6 @@
 <resources>
     <string name="app_name">Productores Cotopaxi</string>
     <string name="title_activity_main">Productores Cotopaxi</string>
-    <string name="package_name">io.ionic.starter</string>
-    <string name="custom_url_scheme">io.ionic.starter</string>
+    <string name="package_name">productores.cotopaxi.starter</string>
+    <string name="custom_url_scheme">productores.cotopaxi.starter</string>
 </resources>
